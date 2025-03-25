@@ -116,6 +116,18 @@
     </style>
 </head>
 <body>
+    <audio id="birthdayMusic" autoplay loop>
+    <source src="https://www.example.com/happy-birthday.mp3" type="audio/mp3">
+</audio>
+<script>
+    window.onload = function () {
+        const music = document.getElementById("birthdayMusic");
+        music.play().catch(() => {
+            console.log("Autoplay blocked. User interaction needed.");
+        });
+    };
+</script>
+
     <div class="container">
         <h1>Happy Birthday SIS</h1>
         
