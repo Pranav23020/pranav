@@ -116,10 +116,60 @@
     </style>
 </head>
 <body>
-    <audio id="birthdayMusic" autoplay loop>
+   <audio id="birthdayMusic" autoplay loop>
     <source src="https://www.dropbox.com/scl/fi/f5nmoczybjkm43a5x6j7l/happy-birthday-314197.mp3?rlkey=8z55evg9pifetqtmopr2rxemo&st=0m4cra0o&raw=1" type="audio/mp3">
     Your browser does not support the audio element.
 </audio>
+
+<button class="play-button" onclick="document.getElementById('birthdayMusic').play()">🎵 Play Music</button>
+
+<style>
+    .play-button {
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        color: white;
+        font-size: 20px;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        font-weight: bold;
+        text-transform: uppercase;
+        box-shadow: 0px 4px 15px rgba(255, 105, 135, 0.3);
+        transition: all 0.3s ease-in-out;
+        outline: none;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .play-button:hover {
+        background: linear-gradient(135deg, #ff758c, #ff7eb3);
+        box-shadow: 0px 6px 20px rgba(255, 105, 135, 0.5);
+        transform: scale(1.05);
+    }
+
+    .play-button:active {
+        transform: scale(0.95);
+    }
+
+    .play-button::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300%;
+        height: 300%;
+        background: rgba(255, 255, 255, 0.2);
+        transition: all 0.5s;
+        border-radius: 50%;
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    .play-button:active::before {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+</style>
+
 
 
 
